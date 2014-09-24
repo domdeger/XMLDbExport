@@ -2,19 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using XMLDbExporter.Core;
 
-namespace XMLDbExporter
+namespace XMLDbExporter.Representation
 {
-    public class KeyValueDescription : XMLDbExporter.IKeyValueDescription
+    public class KeyValueDescription : IKeyValueDescription
     {
+        private string _key;
+        private object _value;
+        private DbType _dbValueType;
         public string Key
         {
             get
             {
-                throw new System.NotImplementedException();
+                return _key;
             }
             set
             {
+                _key = value;
             }
         }
 
@@ -22,21 +27,23 @@ namespace XMLDbExporter
         {
             get
             {
-                throw new System.NotImplementedException();
+                return _value;
             }
             set
             {
+                _value = value;
             }
         }
 
-        public int DBValueType
+        public DbType DBValueType
         {
             get
             {
-                throw new System.NotImplementedException();
+                return _dbValueType;
             }
             set
             {
+                _dbValueType = value;
             }
         }
     }

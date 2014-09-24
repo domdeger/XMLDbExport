@@ -2,31 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using XMLDbExporter.Core;
 
-namespace XMLDbExporter
+namespace XMLDbExporter.Representation
 {
-    public class DatabaseRow : XMLDbExporter.IDatabaseRowRepresentation
+    public class DatabaseRow : IDatabaseRowRepresentation
     {
-        public System.Collections.Generic.IList<XMLDbExporter.IKeyValueDescription> Values
+        public System.Collections.Generic.IList<IKeyValueDescription> Values
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
 
         public int Count
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
     }
 }

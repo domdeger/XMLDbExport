@@ -1,5 +1,5 @@
 ﻿using System;
-namespace XMLDbExporter
+namespace XMLDbExporter.Core
 {
     interface IKeyValueDescription
     {

@@ -1,5 +1,6 @@
 ﻿using System;
-namespace XMLDbExporter
+using XMLDbExporter.Representation;
+namespace XMLDbExporter.Core
 {
     interface IDbContextHandler
     {

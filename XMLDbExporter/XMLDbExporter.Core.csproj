@@ -39,13 +39,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\Schema\ColumnDefinition.cs" />
+    <Compile Include="Database\Schema\DatabaseSchema.cs" />
+    <Compile Include="Database\Schema\TableDefinition.cs" />
     <Compile Include="Representation\DatabaseRow.cs" />
     <Compile Include="Representation\DatabaseTable.cs" />
     <Compile Include="Representation\DataTransferObject.cs" />
-    <Compile Include="Database\DbContextHandler.cs" />
-    <Compile Include="Database\DbContextHandlerConfiguration.cs" />
-    <Compile Include="Database\DbProtocol.cs" />
-    <Compile Include="Database\DbType.cs" />
+    <Compile Include="Database\Query\DbContextHandler.cs" />
+    <Compile Include="Database\Query\DbContextHandlerConfiguration.cs" />
+    <Compile Include="Database\Query\DbProtocol.cs" />
+    <Compile Include="Database\Query\DbType.cs" />
     <Compile Include="Core\IDatabaseRowRepresentation.cs" />
     <Compile Include="Core\IDatabaseTableRepresentation.cs" />
     <Compile Include="Core\IDbContextHandler.cs" />
@@ -53,7 +56,7 @@
     <Compile Include="Core\ISQLTransferQueryBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Representation\PropertyValueDescription.cs" />
-    <Compile Include="Database\SQLQueryBuilder.cs" />
+    <Compile Include="Database\Query\SQLQueryBuilder.cs" />
     <Compile Include="XML\XMLBase.cs" />
     <Compile Include="XML\XMLImporter.cs" />
     <Compile Include="XML\XMLSyntaxBuilder.cs" />

@@ -1,9 +1,11 @@
 ﻿using System;
-namespace XMLDbExporter
+using System.Collections.Generic;
+using XMLDbExporter.Representation;
+namespace XMLDbExporter.Core
 {
     interface IDatabaseTableRepresentation
     {
-        System.Collections.Generic.IList<DatabaseRow> Rows { get; set; }
+        IList<DatabaseRow> Rows { get; set; }
         int TableName { get; set; }
     }
 }

@@ -2,20 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using XMLDbExporter.Core;
 
-namespace XMLDbExporter
+namespace XMLDbExporter.Representation
 {
-    public class DbContextHandler : XMLDbExporter.IDbContextHandler
+    public class DbContextHandler : IDbContextHandler
     {
         public XMLDbExporter.DbContextHandlerConfiguration Configuration
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
 
         public void Import(DataTransferObject o, string dbName)

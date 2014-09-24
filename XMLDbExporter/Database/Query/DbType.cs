@@ -2,19 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using XMLDbExporter.Core;
 
-namespace XMLDbExporter.Representation
+namespace XMLDbExporter
 {
-    public class DataTransferObject
+    public class DbType
     {
-        public int DatabaseSchema
+        public string DBTypeName
         {
             get;
             set;
         }
 
-        public IList<IDatabaseTableRepresentation> Tables
+        public IEnumerable<Type> PossibleSystemType
         {
             get;
             set;

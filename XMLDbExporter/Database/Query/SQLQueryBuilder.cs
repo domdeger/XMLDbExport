@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using XMLDbExporter.Core;
+using XMLDbExporter.Representation;
 
 namespace XMLDbExporter
 {
-    public class SQLQueryBuilder : XMLDbExporter.ISQLTransferQueryBuilder
+    public class SQLQueryBuilder : ISQLTransferQueryBuilder
     {
         public string BuildImportQuery(DataTransferObject o)
         {
