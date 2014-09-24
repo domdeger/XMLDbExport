@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DatabaseRepresentation"
+    targetNamespace="http://tempuri.org/DatabaseRepresentation.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/DatabaseRepresentation.xsd"
+    xmlns:mstns="http://tempuri.org/DatabaseRepresentation.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+
+  <xs:element name="DbExport" type="DatabaseCollection" />
+
+  <xs:complexType name="DatabaseCollection">
+    <xs:sequence minOccurs="1">
+      <xs:element name="Database" type="Database" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Database">
+    <xs:sequence minOccurs="1" maxOccurs="1">
+      <xs:element name="Tables" type="TableCollection" />
+      <xs:element name="Schema" type="DbSchema" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+
+  <xs:complexType name="TableCollection">
+    <xs:sequence minOccurs="1">
+      <xs:element name="Table" type="Table" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DbSchema">
+    <xs:sequence minOccurs="1">
+      <xs:element type="TableDefinition" name="TableDefinitions" />
+    </xs:sequence>
+    <xs:attribute name="Charset" type="xs:string" />
+  </xs:complexType>
+
+  <xs:complexType name="TableDefinition">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="Columns" type="ColumnDefinition" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ColumnDefinition">
+    <xs:sequence minOccurs="1">
+      <xs:element name="Name" type="xs:string" />
+      <xs:element name="DataType" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="Table">
+    <xs:sequence>
+      <xs:element name="Rows" minOccurs="1" type="TableRow" />
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="Name" />
+  </xs:complexType>
+
+  <xs:complexType name="TableRow">
+    <xs:sequence>
+      <xs:element name="Row" type="KeyValuePair" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="KeyValuePair">
+    <xs:sequence>
+      <xs:element name="ColumnName" type="xs:string" />
+      <xs:element name="ColumnValue" type="xs:anyType" />
+      <xs:element name="DbType" type="DbType" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="DbType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="varchar" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
